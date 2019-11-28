@@ -1,0 +1,54 @@
+   26  wget http://mirrors.ircam.fr/pub/apache/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz
+   27  cd /opt/
+   30  sudo tar zxf /home/bluedata/hadoop-3.2.1.tar.gz 
+   35  java -version
+   59  sudo ln -s /opt/hadoop-3.2.1/ /opt/hadoop
+   74  env | grep PATH
+   75  which java
+   76  java -version
+   84  grep -R install_hadoop_integration
+   91  vi bin/dssadmin
+   93  grep -R default_env
+   96  grep -R DIP_HOME
+  110  grep -R env-default.sh
+  112  vi bin/env-default.sh 
+  126  cd data
+  128  ./bin/dss stop
+  129  ./bin/dssadmin install-hadoop-integration
+  131  vi /etc/bashrc 
+  132  vi .bashrc 
+  133  . .bashrc
+  161  hadoop version
+  162  which java
+  169  grep -R JAVA_HOME
+  174  hadoop version
+  175  hdfs dfs -ls hdfs://hadoop@hadoop2x.jear.co:9000/
+  176  cd data
+  177  ./bin/dss stop
+  178  ./bin/dssadmin install-hadoop-integration
+  179  ./bin/dss start
+  180  ./bin/dss status
+  182  hdfs dfs -ls hdfs://hadoop@hadoop2x.jear.co:9000/
+  183  ll
+  184  hdfs dfs -ls hdfs://hadoop@hadoop3x.jear.co:9000/
+  185  vi .bashrc 
+  196  sudo mv hadoop-env.sh hadoop-env.sh.bak
+  201  sudo mv log4j.properties log4j.properties.bak
+  202  sudo mc core-site.xml core-site.xml.bak
+  204  sudo mv hdfs-site.xml hdfs-site.xml.bak
+  206  sudo cp ~/my-env/core-site.xml .
+  207  sudo cp ~/my-env/hadoop-env.sh .
+  208  sudo cp ~/my-env/hdfs-site.xml .
+  209  sudo cp ~/my-env/log4j.properties .
+  213  hdfs dfs -ls hdfs://hadoop@hadoop2x.jear.co:9000/
+  214  hdfs dfs -ls hdfs://hadoop@hadoop3x.jear.co:9000/
+  215  hdfs dfs -ls dtap://TenantStorage/
+  216  hdfs dfs -ls dtap://Nantes/
+  217  hdfs dfs -ls dtap://Lyon/
+  220  mv dataiku-dss-5.1.5/lib/ivy/common-run/guava-18.0.jar common-run-guava-18.0.jar
+  221  mv dataiku-dss-5.1.5/lib/ivy/backend-run/guava-18.0.jar backend-run-guava-18.0.jar
+  222  ./bin/dss stop
+  223  cd  data
+  224  ./bin/dss stop
+  225  ./bin/dss sart
+  226  ./bin/dss restart

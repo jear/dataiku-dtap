@@ -1,0 +1,22 @@
+export PATH=/opt/hadoop-${version}/bin/:$PATH
+
+export HADOOP_HOME=/opt/hadoop
+
+export PATH=$PATH:$HADOOP_HOME:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
+
+export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+#export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64/jre
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64
+export JRE_HOME=$JAVA_HOME/jre
+
+#export HADOOP_CONF_DIR=/opt/hadoop/conf
+
+ 
+export HADOOP_CLASSPATH=$HADOOP_CLASSPATH:$HADOOP_HOME/lib/:/opt/bluedata/bluedata-dtap.jar
+
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+export HADOOP_INSTALL=$HADOOP_HOME
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export YARN_HOME=$HADOOP_HOME
