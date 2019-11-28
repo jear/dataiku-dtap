@@ -20,10 +20,10 @@
     sudo mv /opt/hadoop/etc/hadoop/log4j.properties /opt/hadoop/etc/hadoop/log4j.properties.bak
 
     git clone https://github.com/jear/dataiku-dtap
-    sudo cp dataiku-dtap/core-site.xml /opt/hadoop/etc/hadoop/core-site.xml 
-    sudo cp dataiku-dtap/hadoop-env.sh /opt/hadoop/etc/hadoop/hadoop-env.sh 
-    sudo cp dataiku-dtap/hdfs-site.xml /opt/hadoop/etc/hadoop/hdfs-site.xml 
-    sudo cp dataiku-dtap/log4j.properties /opt/hadoop/etc/hadoop/log4j.properties 
+    sudo cp dataiku-dtap/hadoop-conf/core-site.xml /opt/hadoop/etc/hadoop/core-site.xml 
+    sudo cp dataiku-dtap/hadoop-conf/hadoop-env.sh /opt/hadoop/etc/hadoop/hadoop-env.sh 
+    sudo cp dataiku-dtap/hadoop-conf/hdfs-site.xml /opt/hadoop/etc/hadoop/hdfs-site.xml 
+    sudo cp dataiku-dtap/hadoop-conf/log4j.properties /opt/hadoop/etc/hadoop/log4j.properties 
 
     # Test dtap
     hdfs dfs -ls hdfs://hadoop@hadoop2x.jear.co:9000/user/
@@ -33,13 +33,15 @@
     hdfs dfs -ls dtap://Lyon/user/
 
 
-    mv data/bin/env-default.sh cp data/bin/env-default.sh.bak
-    echo “export PATH=$PATH:/opt/hadoop/bin” >> data/bin/env-default.sh
+    mv ~/data/bin/env-default.sh cp ~/data/bin/env-default.sh.bak
+    echo “export PATH=$PATH:/opt/hadoop/bin” >> ~/data/bin/env-default.sh
 
-    mv dataiku-dss-5.1.5/lib/ivy/common-run/guava-18.0.jar common-run-guava-18.0.jar
-    mv dataiku-dss-5.1.5/lib/ivy/backend-run/guava-18.0.jar backend-run-guava-18.0.jar
+    mv dataiku-dss-5.1.5/lib/ivy/common-run/guava-18.0.jar ~/common-run-guava-18.0.jar
+    mv dataiku-dss-5.1.5/lib/ivy/backend-run/guava-18.0.jar ~/backend-run-guava-18.0.jar
+    
+    # Now test from Dataiku UI
 
-    cd data
+    cd ~/data
     ./bin/dss stop
     ./bin/dssadmin install-hadoop-integration
     ./bin/dss start
