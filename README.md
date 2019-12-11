@@ -39,7 +39,7 @@
     mv dataiku-dss-5.1.5/lib/ivy/common-run/guava-18.0.jar ~/common-run-guava-18.0.jar
     mv dataiku-dss-5.1.5/lib/ivy/backend-run/guava-18.0.jar ~/backend-run-guava-18.0.jar
     
-    # Now test from Dataiku UI
+    
 
     cd ~/data
     ./bin/dss stop
@@ -47,4 +47,4 @@
     ./bin/dss start
     ./bin/dss status
 
-
+    # Now test from Dataiku UI (with the HDFS license)
