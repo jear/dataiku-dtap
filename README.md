@@ -33,7 +33,7 @@
     hdfs dfs -ls dtap://Lyon/user/
 
 
-    mv ~/data/bin/env-default.sh cp ~/data/bin/env-default.sh.bak
+    mv ~/data/bin/env-default.sh ~/data/bin/env-default.sh.bak
     echo “export PATH=$PATH:/opt/hadoop/bin” >> ~/data/bin/env-default.sh
 
     mv dataiku-dss-5.1.5/lib/ivy/common-run/guava-18.0.jar ~/common-run-guava-18.0.jar
